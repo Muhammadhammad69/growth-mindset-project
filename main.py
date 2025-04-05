@@ -132,7 +132,7 @@ def display_todos():
                     """         
                 st.markdown(todo_card_html, unsafe_allow_html=True)
                 
-                col1, col2 = st.columns([1,1],)
+                col1, col2 = st.columns([0.2,1],)
                 with col1:
                     st.button(f"✏️ Edit" , key=f"edit_{index}" , on_click= edit_todo, args=(todo["id"],))
                 with col2:
