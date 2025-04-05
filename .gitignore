@@ -5,6 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
-
+practice.ipynb
+sp.py
 # Virtual environments
 .venv
