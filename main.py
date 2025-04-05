@@ -65,11 +65,10 @@ def save_todos(todo):
     with open(TODOS_FILE_PATH, "w") as file:
         todos.append(todo)
         json.dump(todos, file, indent=4)
-        st.sidebar.success("Todo added successfully")
+        st.toast('Todo added successfully', icon="✅")
 
 @st.dialog("Update Todo")
-def update_todos(todo_id):
-    
+def update_todos(todo_id):    
     update_title = st.text_input("Update todo title")
     update_description = st.text_area("Update Todo Description")
     is_button_clicked = st.button("Submit")
@@ -91,7 +90,7 @@ def update_todos(todo_id):
                 
                 with open(TODOS_FILE_PATH, "w") as file:
                     json.dump(todos, file, indent=4)
-                    st.success("Todo updated successfully")
+                    st.toast("Todo updated successfully", icon="✅")
                     time.sleep(1)
                 st.rerun()
                 
@@ -102,7 +101,7 @@ def update_todos(todo_id):
 
 # ya per edit todos k function hain to todo ko edit kr raha hain
 def edit_todo(index):
-    get_update_todo = update_todos(index)
+    update_todos(index)
 
 def del_todo(id):
     todos = get_todos()
@@ -113,7 +112,7 @@ def del_todo(id):
     # todos.remove(todos[index - 1])
     with open(TODOS_FILE_PATH, "w") as file:
         json.dump(todos, file, indent=4)
-    st.success("Todo deleted successfully")
+    st.toast("Todo deleted successfully", icon="✅")
     
 
 st.title("My Todo App")
@@ -133,7 +132,7 @@ def display_todos():
                     """         
                 st.markdown(todo_card_html, unsafe_allow_html=True)
                 
-                col1, col2 = st.columns([0.2,1])
+                col1, col2 = st.columns([1,1],)
                 with col1:
                     st.button(f"✏️ Edit" , key=f"edit_{index}" , on_click= edit_todo, args=(todo["id"],))
                 with col2:
