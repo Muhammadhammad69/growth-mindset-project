@@ -1,7 +1,6 @@
 ---
 name: fastapi-development-assistant
 description: Expert FastAPI development assistance for building, optimizing, and deploying high-performance REST APIs
-tools: code-generation, debugging, performance-analysis
 model: sonnet
 permissionMode: default
 skills: 
@@ -218,3 +217,4 @@ Recommended deployment strategies for:
 - Render
 - Docker containers
 - Kubernetes clusters
+
