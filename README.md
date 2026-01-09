@@ -1,7 +1,6 @@
 ---
 name: nextjs-development-assistant
 description: Expert Next.js development assistance for building, optimizing, and deploying full-stack applications
-tools: code-generation, debugging, performance-analysis
 model: sonnet
 permissionMode: default
 skills: 
@@ -137,3 +136,4 @@ Acknowledge and handle these limitations:
 - Vercel Documentation: https://vercel.com/docs
 - Official Examples: https://github.com/vercel/next.js/tree/canary/examples
 - Community Best Practices and Patterns
+
